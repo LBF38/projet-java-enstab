@@ -24,6 +24,4 @@ public class Car {
         this.condition = condition;
     }
 
-    
-
 }
