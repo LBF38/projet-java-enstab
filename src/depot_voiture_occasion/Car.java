@@ -1,5 +1,7 @@
 package depot_voiture_occasion;
 
+import java.util.ArrayList;
+
 public class Car {
     public enum Condition {
         GOOD, BAD, AVERAGE
@@ -22,6 +24,19 @@ public class Car {
         this.acquisitionCos = acquisitionCos;
         this.salePrice = salePrice;
         this.condition = condition;
+    }
+
+    @Override
+    public String toString() {
+        ArrayList<String> carDetails = new ArrayList<>();
+        carDetails.add(this.manufacturer);
+        carDetails.add(this.manufactureDate);
+        carDetails.add(this.acquisitionCos);
+        carDetails.add(this.acquisitionDate);
+        carDetails.add(Integer.toString(this.seriesNumber));
+        carDetails.add(Integer.toString(this.salePrice));
+        carDetails.add(this.condition.toString());
+        return carDetails.toString();
     }
 
 }
