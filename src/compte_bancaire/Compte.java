@@ -16,37 +16,46 @@ public class Compte {
     }
 
     public void montrerSolde() {
-        System.out.print("Solde du compte: " + this.solde + " euros \n");
+        System.out.print("Solde du compte de " + this.titulaire + ": " + this.solde + " euros \n");
     }
 
-    public void crediter(double montant) {
+    public boolean crediter(double montant) {
         if (montant >= 0) {
             System.out.println("Créditer le compte de " + montant + " euros");
             this.solde += montant;
+            return true;
         } else {
             System.out.println("Montant négatif. Veuillez indiquer un montant positif ou nul");
+            return false;
         }
     }
 
-    public void debiter(double montant) {
+    public boolean debiter(double montant) {
         System.out.println("Débiter le compte de " + montant + " euros");
         if (montant > this.debit_max) {
             System.out.println(
                     "Montant à débiter non autorisé. La limite de débit est de : " + this.debit_max + " euros.");
-            return;
+            return false;
         }
         double solde_resultant = this.solde - montant;
         if (Math.abs(solde_resultant) > this.decouvert_max) {
             System.out.println(
                     "Montant non autorisé. Votre limite de découvert est de " + this.decouvert_max + " euros.");
-            return;
+            return false;
         }
         this.solde = solde_resultant;
+        return true;
     }
 
-    public void effectuerVirement(double montant, Compte destinataire) {
+    public boolean effectuerVirement(double montant, Compte destinataire) {
         System.out.println("Virement de " + montant + " vers " + destinataire.titulaire);
-        // A compléter
+        if (this.debiter(montant)) {
+            destinataire.crediter(montant);
+            return true;
+        } else {
+            System.out.println("Virement non effectué. Solde insuffisant.");
+            return false;
+        }
     }
 
     @Override
