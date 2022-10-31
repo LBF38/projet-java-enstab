@@ -29,8 +29,19 @@ public class Compte {
     }
 
     public void debiter(double montant) {
-        System.out.println("Débiter le compte de " + montant);
-        // A compléter
+        System.out.println("Débiter le compte de " + montant + " euros");
+        if (montant > this.debit_max) {
+            System.out.println(
+                    "Montant à débiter non autorisé. La limite de débit est de : " + this.debit_max + " euros.");
+            return;
+        }
+        double solde_resultant = this.solde - montant;
+        if (Math.abs(solde_resultant) > this.decouvert_max) {
+            System.out.println(
+                    "Montant non autorisé. Votre limite de découvert est de " + this.decouvert_max + " euros.");
+            return;
+        }
+        this.solde = solde_resultant;
     }
 
     public void effectuerVirement(double montant, Compte destinataire) {

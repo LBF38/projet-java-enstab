@@ -16,5 +16,12 @@ public class App {
         premierCompte.montrerSolde();
         premierCompte.crediter(-5);
         premierCompte.montrerSolde();
+        // Tests débits
+        premierCompte.debiter(200);
+        premierCompte.montrerSolde();
+        premierCompte.debiter(1000); 
+        premierCompte.debiter(1500); 
+        premierCompte.debiter(10);
+        premierCompte.montrerSolde();
     }
 }

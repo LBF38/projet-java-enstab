@@ -44,7 +44,7 @@ Création de compte
 => nom titulaire requis.
 par défaut:
 
-- débit initial = 0
+- dépôt initial = 0
 - découvert max = 800€
 - débit max = 1000€
 
