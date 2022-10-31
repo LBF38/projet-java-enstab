@@ -16,8 +16,7 @@ public class Compte {
     }
 
     public void montrerSolde() {
-        System.out.print("Solde du compte: " + this.solde);
-        // A compléter
+        System.out.print("Solde du compte: " + this.solde + " euros \n");
     }
 
     public void crediter(double montant) {
@@ -37,9 +36,11 @@ public class Compte {
 
     @Override
     public String toString() {
-        System.out.println("Etat du Compte de " + this.titulaire);
-        System.out.println(this.id + " " + this.debit_max + " " + this.decouvert_max);
-        // A compléter
-        return "Compte de " + this.titulaire;
+        String string_compte = "Etat du compte de " + this.titulaire + "\n";
+        string_compte += "Identifiant du compte: " + this.id + "\n";
+        string_compte += "Solde actuel: " + this.solde + " euros\n";
+        string_compte += "Débit max: " + this.debit_max + " euros\n";
+        string_compte += "Découvert max: " + this.decouvert_max + " euros\n";
+        return string_compte;
     }
 }

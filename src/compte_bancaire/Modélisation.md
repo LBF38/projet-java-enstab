@@ -75,3 +75,4 @@ Toutes les infos du compte sont consultables:
 - crediter(montant)
 - debiter(montant)
 - montrerSolde()
+- toString() => pour afficher toutes les infos du compte.
