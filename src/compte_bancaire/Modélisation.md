@@ -58,3 +58,20 @@ Toutes les infos du compte sont consultables:
 - montant débit max
 - situation compte (à découvert ?)
 - montant débit autorisé (fonction solde courant, débit max, découvert max)
+
+## Modélisation
+
+### Attributs
+
+- titulaire: String
+- id:int
+- solde:double
+- decouvert_max:double
+- debit_max:double
+
+### Méthodes
+
+- effectuerVirement(montant, destinataire)
+- crediter(montant)
+- debiter(montant)
+- montrerSolde()
