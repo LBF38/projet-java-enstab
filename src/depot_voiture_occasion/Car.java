@@ -39,4 +39,11 @@ public class Car {
         return carDetails.toString();
     }
 
+    public boolean isBad() {
+        return this.condition == Condition.BAD;
+    }
+
+    public void discountPrice(Double discount) {
+        this.salePrice *= (1 - discount);
+    }
 }
