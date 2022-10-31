@@ -11,5 +11,10 @@ public class App {
         Compte premierCompte = Banque.get(0);
         premierCompte.montrerSolde();
         System.out.println(premierCompte);
+        // Tests crédits
+        premierCompte.crediter(5);
+        premierCompte.montrerSolde();
+        premierCompte.crediter(-5);
+        premierCompte.montrerSolde();
     }
 }

@@ -20,8 +20,12 @@ public class Compte {
     }
 
     public void crediter(double montant) {
-        System.out.println("Créditer le compte de " + montant);
-        // A compléter
+        if (montant >= 0) {
+            System.out.println("Créditer le compte de " + montant + " euros");
+            this.solde += montant;
+        } else {
+            System.out.println("Montant négatif. Veuillez indiquer un montant positif ou nul");
+        }
     }
 
     public void debiter(double montant) {
