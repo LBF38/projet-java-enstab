@@ -76,3 +76,7 @@ Toutes les infos du compte sont consultables:
 - debiter(montant)
 - montrerSolde()
 - toString() => pour afficher toutes les infos du compte.
+
+### Getters & setters
+
+A quelles variables avons-nous le droit d'accéder ?
