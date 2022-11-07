@@ -5,8 +5,8 @@ import java.util.*;
 public class App {
     public static void main(String[] args) {
         List<Compte> Banque = new ArrayList<>();
-        Banque.add(new Compte("DUPONT", 100));
-        Banque.add(new Compte("GOLDMAN", 0));
+        Banque.add(new Compte("DUPONT"));
+        Banque.add(new Compte("GOLDMAN"));
 
         // Tests
         Compte premierCompte = Banque.get(0);

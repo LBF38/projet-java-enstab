@@ -1,18 +1,56 @@
 package compte_bancaire;
 
+import java.util.*;
+
 public class Compte {
-    private int id;
+    private UUID id;
     private String titulaire;
     private double solde;
     private double decouvert_max;
     private double debit_max;
 
-    public Compte(String titulaire, double solde) {
-        this.id += 1; // vérifier incrémentation des vals. Ajouter génération UUID.
+    public Compte(String titulaire) {
+        this.id = UUID.randomUUID(); // vérifier incrémentation des vals. Ajouter génération UUID.
         this.titulaire = titulaire;
-        this.solde = solde; // ajouter une val par défaut.
+        this.solde = 0; // ajouter une val par défaut.
         this.decouvert_max = 800; // ajouter modif à la création ou val. défaut
         this.debit_max = 1000; // ajouter modif à la création ou val. défaut
+    }
+
+    public Compte(String titulaire, double solde, double decouvert_max, double debit_max) {
+        this.id = UUID.randomUUID();
+        this.titulaire = titulaire;
+        this.solde = solde;
+        this.decouvert_max = decouvert_max;
+        this.debit_max = debit_max;
+    }
+
+    public UUID getID() {
+        return id;
+    }
+
+    public String getTitulaire() {
+        return titulaire;
+    }
+
+    public double getSolde() {
+        return solde;
+    }
+
+    public void setSolde(double value) {
+        // A vérifier
+        if (value < 0) {
+            System.out.println("Please use a valid value.");
+        }
+        this.solde = value;
+    }
+
+    public double getDecouvertMax() {
+        return decouvert_max;
+    }
+
+    public double getDebitMax() {
+        return debit_max;
     }
 
     public void montrerSolde() {
