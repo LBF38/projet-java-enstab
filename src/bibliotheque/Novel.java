@@ -21,8 +21,11 @@ public class Novel extends Book {
     @Override
     public String toString() {
         return "{" +
-            " literaryPrice='" + getLiteraryPrice() + "'" +
-            "}";
+                " regNum='" + getRegNum() + "'" +
+                " title='" + getTitle() + "'" +
+                " author='" + getAuthor() + "'" +
+                " nbrPages='" + getNbrPages() + "'" +
+                " literaryPrice='" + getLiteraryPrice() + "'" +
+                "}";
     }
-
 }

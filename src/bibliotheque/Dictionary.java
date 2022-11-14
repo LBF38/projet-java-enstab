@@ -21,8 +21,9 @@ public class Dictionary extends Document {
     @Override
     public String toString() {
         return "{" +
+                " regNum='" + getRegNum() + "'" +
+                " title='" + getTitle() + "'" +
                 " language='" + getLanguage() + "'" +
                 "}";
     }
-
 }

@@ -24,5 +24,4 @@ public abstract class Document {
                 ", title='" + getTitle() + "'" +
                 "}";
     }
-
 }

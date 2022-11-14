@@ -21,9 +21,10 @@ public class Book extends Document {
     @Override
     public String toString() {
         return "{" +
+                " regNum='" + getRegNum() + "'" +
+                " title='" + getTitle() + "'" +
                 " author='" + getAuthor() + "'" +
                 ", nbrPages='" + getNbrPages() + "'" +
                 "}";
     }
-
 }

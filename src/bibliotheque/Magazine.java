@@ -21,9 +21,10 @@ public class Magazine extends Document {
     @Override
     public String toString() {
         return "{" +
-            " month='" + getMonth() + "'" +
-            ", year='" + getYear() + "'" +
-            "}";
+                " regNum='" + getRegNum() + "'" +
+                " title='" + getTitle() + "'" +
+                " month='" + getMonth() + "'" +
+                ", year='" + getYear() + "'" +
+                "}";
     }
-
 }

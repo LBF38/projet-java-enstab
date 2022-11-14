@@ -24,8 +24,11 @@ public class Manual extends Book {
     @Override
     public String toString() {
         return "{" +
+                " regNum='" + getRegNum() + "'" +
+                " title='" + getTitle() + "'" +
+                " author='" + getAuthor() + "'" +
+                " nbrPages='" + getNbrPages() + "'" +
                 " level='" + getLevel() + "'" +
                 "}";
     }
-
 }
