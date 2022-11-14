@@ -5,17 +5,18 @@ public class RetValTest {
 
     public static int extractCamEmail(String sentence) {
         if (sentence == null || sentence.length() == 0)
-            return -1;
-        // Error - sentence empty
-        String tokens[] = sentence.split(" ");
-        // split into tokens
+            // return -1;
+            // // Error - sentence empty
+            throw new RuntimeException("Error - sentence empty");
+        String tokens[] = sentence.split(" "); // split into tokens
         for (int i = 0; i < tokens.length; i++) {
             if (tokens[i].endsWith("@cam.ac.uk")) {
                 sEmail = tokens[i];
                 return 0; // success
             }
         }
-        return -2; // Error - no cam email found
+        // return -2; // Error - no cam email found
+        throw new RuntimeException("Error - no cam email found");
     }
 
     public static void main(String[] args) {
