@@ -1,0 +1,8 @@
+# Pour les fichiers configuration de IntelliJ IDEA
+.idea/
+
+# Pour les fichiers configuration de VS Code
+# .vscode/
+
+# Pour la compilation Java
+*.class
