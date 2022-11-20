@@ -2,11 +2,24 @@ package compte_bancaire;
 
 import java.util.*;
 
+/**
+ * @author Mathis URIEN (LBF38)
+ * @version 1.0
+ * @since 2019-10-15
+ */
 public class App {
+    
+    /** 
+     * Lancement de l'application
+     * On réalise de simples tests sur l'utilisation de la classe Compte.
+     * => Utilisation de tests unitaires serait plus pertinent.
+     * @param args
+     */
     public static void main(String[] args) {
         List<Compte> Banque = new ArrayList<>();
         Banque.add(new Compte("DUPONT"));
         Banque.add(new Compte("GOLDMAN"));
+        Banque.add(new Compte("BENOIT", 50, 1000, 1000));
 
         // Tests
         Compte premierCompte = Banque.get(0);

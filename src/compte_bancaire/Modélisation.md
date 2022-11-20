@@ -80,3 +80,7 @@ Toutes les infos du compte sont consultables:
 ### Getters & setters
 
 A quelles variables avons-nous le droit d'accéder ?
+On peut accéder en lecture à toutes les variables mais on ne peut modifier que le découvert max et le débit max.
+
+Getters : toutes les variables
+Setters : découvert max et débit max

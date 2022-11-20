@@ -2,6 +2,24 @@ package compte_bancaire;
 
 import java.util.*;
 
+/**
+ * <h1>Classe Compte</h1>
+ * <b> Permet de gérer les comptes bancaires. </b>
+ * <p>
+ * Un compte est caractérisé par :
+ * <ul>
+ * <li>Un numéro de compte</li>
+ * <li>Un nom de titulaire</li>
+ * <li>Un solde</li>
+ * <li>Un découvert autorisé</li>
+ * <li>Un plafond de débit autorisé</li>
+ * </ul>
+ * </p>
+ * 
+ * @author Mathis URIEN (LBF38)
+ * @version 1.0
+ * @since 2019-10-15
+ */
 public class Compte {
     private UUID id;
     private String titulaire;
@@ -9,6 +27,11 @@ public class Compte {
     private double decouvert_max;
     private double debit_max;
 
+    /**
+     * Constructeur par défaut
+     *
+     * @param titulaire
+     */
     public Compte(String titulaire) {
         this.id = UUID.randomUUID(); // vérifier incrémentation des vals. Ajouter génération UUID.
         this.titulaire = titulaire;
@@ -17,6 +40,14 @@ public class Compte {
         this.debit_max = 1000; // ajouter modif à la création ou val. défaut
     }
 
+    /**
+     * Constructeur avec paramètres
+     *
+     * @param titulaire
+     * @param solde
+     * @param decouvert_max
+     * @param debit_max
+     */
     public Compte(String titulaire, double solde, double decouvert_max, double debit_max) {
         this.id = UUID.randomUUID();
         this.titulaire = titulaire;
@@ -24,7 +55,7 @@ public class Compte {
         this.decouvert_max = decouvert_max;
         this.debit_max = debit_max;
     }
-
+    
     public UUID getID() {
         return id;
     }
@@ -37,10 +68,16 @@ public class Compte {
         return solde;
     }
 
+    /**
+     * Définir le solde du compte
+     * 
+     * @param value
+     */
     public void setSolde(double value) {
         // A vérifier
         if (value < 0) {
-            System.out.println("Please use a valid value.");
+            System.out.println("Please use a valid value. Need to be positive.");
+            return;
         }
         this.solde = value;
     }
@@ -49,14 +86,47 @@ public class Compte {
         return decouvert_max;
     }
 
+    /**
+     * Définir le découvert maximum du compte
+     * 
+     * @param value
+     */
+    public void setDecouvertMax(double value) {
+        // A vérifier
+        if (value < 0) {
+            System.out.println("Please use a valid value. Need to be positive.");
+            return;
+        }
+        this.decouvert_max = value;
+    }
+
     public double getDebitMax() {
         return debit_max;
+    }
+
+    /**
+     * Définir le débit maximum du compte
+     * 
+     * @param value
+     */
+    public void setDebitMax(double value) {
+        // A vérifier
+        if (value < 0) {
+            System.out.println("Please use a valid value. Need to be positive.");
+            return;
+        }
+        this.debit_max = value;
     }
 
     public void montrerSolde() {
         System.out.print("Solde du compte de " + this.titulaire + ": " + this.solde + " euros \n");
     }
 
+    /**
+     * Créditer le compte
+     * 
+     * @param montant
+     */
     public boolean crediter(double montant) {
         if (montant >= 0) {
             System.out.println("Créditer le compte de " + montant + " euros");
@@ -68,6 +138,11 @@ public class Compte {
         }
     }
 
+    /**
+     * Débiter le compte
+     * 
+     * @param montant
+     */
     public boolean debiter(double montant) {
         System.out.println("Débiter le compte de " + montant + " euros");
         if (montant > this.debit_max) {
@@ -85,6 +160,12 @@ public class Compte {
         return true;
     }
 
+    /**
+     * Virement entre deux comptes : débiter le compte source et créditer le compte destinataire.
+     * 
+     * @param montant
+     * @param destinataire
+     */
     public boolean effectuerVirement(double montant, Compte destinataire) {
         System.out.println("Virement de " + montant + " vers " + destinataire.titulaire);
         if (this.debiter(montant)) {
@@ -96,6 +177,9 @@ public class Compte {
         }
     }
 
+    /**
+     * Afficher les informations du compte
+     */
     @Override
     public String toString() {
         String string_compte = "Etat du compte de " + this.titulaire + "\n";
