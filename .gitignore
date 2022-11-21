@@ -4,3 +4,4 @@ bin/compte_bancaire/Modélisation.md
 *.class
 *.jar
 *.idea
+*.iml
