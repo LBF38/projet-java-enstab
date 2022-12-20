@@ -21,5 +21,10 @@ public class Main {
         System.out.println(triangle);
         System.out.println("Périmètre : " + triangle.perimetre());
         System.out.println("Surface : " + triangle.surface());
+
+        Rectangle rectangle = new Rectangle(new Point(0, 0), new Point(1, 1));
+        System.out.println(rectangle);
+        System.out.println("Périmètre : " + rectangle.perimetre());
+        System.out.println("Surface : " + rectangle.surface());
     }
 }
