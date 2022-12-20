@@ -14,7 +14,10 @@ public class Simulation {
         this.rand = new Random();
 
         for (int i = 0; i < nbInsects; i++) {
-            this.insects.add(new Insect(this.rand.nextInt(100), this.rand.nextInt(100), this.rand.nextInt(10) + 1));
+            if (this.rand.nextBoolean())
+                this.insects.add(new Ant(this.rand.nextInt(100), this.rand.nextInt(100)));
+            else
+                this.insects.add(new Grasshopper(this.rand.nextInt(100), this.rand.nextInt(100)));
         }
     }
 

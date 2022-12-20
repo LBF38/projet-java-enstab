@@ -62,4 +62,8 @@ public class Insect {
             this.setLastMeal(0);
         }
     }
+
+    public void move() {
+        System.out.println("I'm moving!");
+    }
 }
