@@ -31,5 +31,14 @@ public class Main {
         System.out.println(carre);
         System.out.println("Périmètre : " + carre.perimetre());
         System.out.println("Surface : " + carre.surface());
+
+        ListePolygone listePolygone = new ListePolygone();
+        listePolygone.ajoutPolygone(polygone1);
+        listePolygone.ajoutPolygone(triangle);
+        listePolygone.ajoutPolygone(rectangle);
+        listePolygone.ajoutPolygone(carre);
+
+        System.out.println(listePolygone);
+        listePolygone.afficheInfos();
     }
 }
