@@ -12,6 +12,44 @@ public class Etudiant {
     private String studentSection;
     private ArrayList<Cours> courses;
 
+    public Etudiant(String firstname, String lastname, String birthdate, String cellphone, String parentEmail,
+            Number studyYear, String studentSection) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.birthdate = birthdate;
+        this.cellphone = cellphone;
+        this.parentEmail = parentEmail;
+        this.studyYear = studyYear;
+        this.studentSection = studentSection;
+    }
+
+    public Etudiant(String firstname, String lastname, String birthdate, String cellphone, String parentEmail,
+            Number studyYear, String studentSection, ArrayList<Cours> courses) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.birthdate = birthdate;
+        this.cellphone = cellphone;
+        this.parentEmail = parentEmail;
+        this.studyYear = studyYear;
+        this.studentSection = studentSection;
+        this.courses = courses;
+    }
+
+    public boolean ajouterCours(Cours cours) {
+        if (this.courses == null) {
+            this.courses = new ArrayList<Cours>();
+        }
+        return this.courses.add(cours);
+    }
+
+    public boolean supprimerCours(Cours cours){
+        if (this.courses == null) {
+            System.out.println("L'étudiant n'a pas de cours");
+            return false;
+        }
+        return this.courses.remove(cours);
+    }
+
     public String getFirstname() {
         return this.firstname;
     }

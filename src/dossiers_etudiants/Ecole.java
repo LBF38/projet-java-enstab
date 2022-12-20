@@ -16,11 +16,22 @@ public class Ecole {
     /**
      * Pour ajouter un étudiant à l'école
      */
-    public void addStudent(Etudiant student) {
+    public void ajouterEtudiant(Etudiant student) {
         if (this.students == null) {
             this.students = new ArrayList<Etudiant>();
         }
         this.students.add(student);
+    }
+
+    /**
+     * Pour supprimer un étudiant de l'école
+     */
+    public boolean supprimerEtudiant(Etudiant student) {
+        if (this.students == null) {
+            System.out.println("L'école n'a pas d'étudiants");
+            return false;
+        }
+        return this.students.remove(student);
     }
 
     /**

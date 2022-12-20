@@ -9,6 +9,18 @@ public class Cours {
     private Number grade;
     private Number length;
 
+    public Cours() {
+        this.id = UUID.randomUUID();
+    }
+    
+    public Cours(String name, String teacherName, Number grade, Number length) {
+        this.id = UUID.randomUUID();
+        this.name = name;
+        this.teacherName = teacherName;
+        this.grade = grade;
+        this.length = length;
+    }
+
     public UUID getId() {
         return this.id;
     }
@@ -46,6 +58,9 @@ public class Cours {
     }
 
     public void setLength(Number length) {
+        if (length.intValue() < 0){
+            throw new IllegalArgumentException("La durée d'un cours ne peut pas être négative");
+        }
         this.length = length;
     }
 }
