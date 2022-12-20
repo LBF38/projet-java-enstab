@@ -1,0 +1,7 @@
+bin/compte_bancaire/Modélisation.md
+
+# Projet java : fichiers à ignorer
+*.class
+*.jar
+*.idea
+*.iml
