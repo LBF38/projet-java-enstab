@@ -26,5 +26,10 @@ public class Main {
         System.out.println(rectangle);
         System.out.println("Périmètre : " + rectangle.perimetre());
         System.out.println("Surface : " + rectangle.surface());
+
+        Carre carre = new Carre(new Point(0, 0), 2);
+        System.out.println(carre);
+        System.out.println("Périmètre : " + carre.perimetre());
+        System.out.println("Surface : " + carre.surface());
     }
 }
