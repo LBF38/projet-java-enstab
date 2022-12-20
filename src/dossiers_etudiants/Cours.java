@@ -12,13 +12,24 @@ public class Cours {
     public Cours() {
         this.id = UUID.randomUUID();
     }
-    
+
     public Cours(String name, String teacherName, Number grade, Number length) {
         this.id = UUID.randomUUID();
         this.name = name;
         this.teacherName = teacherName;
         this.grade = grade;
         this.length = length;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                " id='" + getId() + "'" +
+                ", name='" + getName() + "'" +
+                ", teacherName='" + getTeacherName() + "'" +
+                ", grade='" + getGrade() + "'" +
+                ", length='" + getLength() + "'" +
+                "}";
     }
 
     public UUID getId() {
@@ -58,7 +69,7 @@ public class Cours {
     }
 
     public void setLength(Number length) {
-        if (length.intValue() < 0){
+        if (length.intValue() < 0) {
             throw new IllegalArgumentException("La durée d'un cours ne peut pas être négative");
         }
         this.length = length;

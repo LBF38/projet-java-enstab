@@ -42,12 +42,34 @@ public class Etudiant {
         return this.courses.add(cours);
     }
 
-    public boolean supprimerCours(Cours cours){
+    public boolean supprimerCours(Cours cours) {
         if (this.courses == null) {
             System.out.println("L'étudiant n'a pas de cours");
             return false;
         }
         return this.courses.remove(cours);
+    }
+
+    public Number calculerMoyenne() {
+        Number moyenne = 0;
+        for (Cours cours : this.courses) {
+            moyenne = moyenne.doubleValue() + cours.getGrade().doubleValue();
+        }
+        return moyenne.doubleValue() / this.courses.size();
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                " firstname='" + getFirstname() + "'" +
+                ", lastname='" + getLastname() + "'" +
+                ", birthdate='" + getBirthdate() + "'" +
+                ", cellphone='" + getCellphone() + "'" +
+                ", parentEmail='" + getParentEmail() + "'" +
+                ", studyYear='" + getStudyYear() + "'" +
+                ", studentSection='" + getStudentSection() + "'" +
+                ", courses='" + getCourses() + "'" +
+                "}";
     }
 
     public String getFirstname() {

@@ -40,4 +40,11 @@ public class Ecole {
     public void setStudents(ArrayList<Etudiant> students) {
         this.students = students;
     }
+
+    public void tousEtudiant(){
+        System.out.println("Liste des étudiants de l'école :");
+        for (Etudiant etudiant : this.students) {
+            System.out.println(etudiant.getFirstname() + " " + etudiant.getLastname());
+        }
+    }
 }
