@@ -3,7 +3,7 @@ package polygones;
 import java.util.ArrayList;
 
 public class Polygone {
-    private ArrayList<Point> points;
+    protected ArrayList<Point> points;
 
     public Polygone(ArrayList<Point> points) {
         this.points = points;
