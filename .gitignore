@@ -1,3 +1,5 @@
+# Pour l'exercice compte_bancaire
+bin/compte_bancaire/Modélisation.md
 # Pour les fichiers configuration de IntelliJ IDEA
 .idea/
 
@@ -6,3 +8,9 @@
 
 # Pour la compilation Java
 *.class
+
+# Projet java : fichiers à ignorer
+*.class
+*.jar
+*.idea
+*.iml
