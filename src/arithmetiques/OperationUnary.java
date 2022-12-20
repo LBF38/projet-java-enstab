@@ -1,9 +1,9 @@
 package arithmetiques;
 
-public abstract class OperationUnary {
+public abstract class OperationUnary implements Expression {
     Expression operation;
 
-    public OperationUnary(Expression operation) {
+    OperationUnary(Expression operation) {
         this.operation = operation;
     }
 }
