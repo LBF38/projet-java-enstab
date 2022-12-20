@@ -14,14 +14,17 @@ public class Simulation {
         this.rand = new Random();
 
         for (int i = 0; i < nbInsects; i++) {
-            this.insects.add(new Insect(this.rand.nextInt(100), this.rand.nextInt(100)));
+            this.insects.add(new Insect(this.rand.nextInt(100), this.rand.nextInt(100), this.rand.nextInt(10) + 1));
         }
     }
 
     public void simulate() {
+        System.out.println("Simulation started");
         for (int i = 0; i < this.nbRounds; i++) {
+            System.out.println("\nRound " + i);
             for (Insect insect : this.insects) {
                 System.out.println(insect);
+                insect.eat();
             }
         }
     }
