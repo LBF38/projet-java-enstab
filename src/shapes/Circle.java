@@ -5,6 +5,10 @@ public class Circle {
     private double x;
     private double y;
 
+    public double distanceToOrigin() {
+        return Math.sqrt(x * x + y * y);
+    }
+
     public double area() {
         return radius * radius * Math.PI;
     }
@@ -51,5 +55,12 @@ public class Circle {
         this.radius = radius;
         this.x = x;
         this.y = y;
+    }
+
+    @Override
+    public String toString() {
+        return "radius=" + getRadius() +
+                ", x=" + getX() +
+                ", y=" + getY();
     }
 }
