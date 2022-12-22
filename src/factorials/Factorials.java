@@ -17,10 +17,15 @@ public class Factorials {
         while (keepGoing.equals("y") || keepGoing.equals("Y")) {
             System.out.print("Enter an integer: ");
             int val = scan.nextInt();
-            System.out.println("Factorial(" + val
-                    + ") = " + MathUtils.factorial(val));
+            try {
+                System.out.println("Factorial(" + val
+                        + ") = " + MathUtils.factorial(val));
+            } catch (IllegalArgumentException exception) {
+                System.out.println("You need to enter a positive integer.");
+            }
             System.out.print("Another factorial?(y/n) ");
             keepGoing = scan.next();
         }
+        scan.close();
     }
 }
